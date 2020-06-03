@@ -1,0 +1,36 @@
+<div class="task-interest-container mb-4">
+  <div id="accordion">
+    <div class="card">
+      <app-ui-card-header 
+        [title]="'Task Interest'"
+        [id]="'taskInterest'"
+        [target]="'taskInterestCollapse'">
+      </app-ui-card-header>
+  
+      <div id="taskInterestCollapse" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <div class="class-task-sub-title">
+            What brings you here today?
+          </div>
+          <div class="task-interest-options mb-3">
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <label class="custom-control-label" for="defaultUnchecked">
+                I'm ready to book right now
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <label class="custom-control-label" for="defaultUnchecked">
+                I'm interested in booking sometime soon
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#taskInterestCollapse" aria-expanded="true" aria-controls="taskInterestCollapse">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

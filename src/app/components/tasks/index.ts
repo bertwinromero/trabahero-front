@@ -1,0 +1,12 @@
+export { TasksComponent } from './tasks.component';
+export { TaskTitleComponent } from './task-title/task-title.component';
+export { TaskBookComponent } from './task-book/task-book.component';
+export { TaskInterestComponent } from './task-interest/task-interest.component';
+export { TaskLocationComponent } from './task-location/task-location.component';
+export { TaskOptionsComponent } from './task-options/task-options.component';
+export { TaskExploreComponent } from './task-explore/task-explore.component';
+export { TaskListComponent } from './task-list/task-list.component';
+export { TaskUsersComponent } from './task-users/task-users.component';
+export { TaskDescriptionComponent } from './task-description/task-description.component';
+export { TaskSummaryComponent } from './task-summary/task-summary.component';
+export { TaskScheduleComponent } from './task-schedule/task-schedule.component';

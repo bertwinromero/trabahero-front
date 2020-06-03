@@ -1,0 +1,12 @@
+@import '../../../../app/styles/custom';
+
+.task-schedule {
+  .task-schedule-change {
+    color: $gray;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

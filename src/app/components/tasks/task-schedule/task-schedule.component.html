@@ -1,0 +1,45 @@
+<div class="task-schedule">
+  <div class="container">
+    <app-task-title
+      [title]="'Choose your task date and start time'"
+      [step]="'3'"
+    ></app-task-title>
+    <ng-template #setDate>
+      <div class="task-schedulate-datepicker mt-4">
+        <dl-date-time-picker
+          startView="day"
+          maxView="year"
+          minView="minute"
+          minuteStep="5"
+          [(ngModel)]="selectedDate"
+          (change)="onCustomDateChange($event)"
+        >
+        </dl-date-time-picker>
+      </div>
+    </ng-template>
+    
+    <div 
+      *ngIf="selectedDate else setDate"
+      class="task-schedule-date-selected mt-4 text-center">
+      Request for: <strong>{{selectedDate}}</strong>
+      <div class="mt-2">
+        <a 
+          (click)="onChangeSchedule()"
+          class="task-schedule-change mr-2">
+          Edit schedule
+        </a>
+        <button
+          type="button" 
+          class="btn btn-primary">
+            Select & Continue
+        </button>
+      </div>
+      
+    </div>
+    <hr>
+    <div class="task-schedule-hero mt-4">
+      <h5>Selected task hero</h5>
+      <app-card-user></app-card-user>
+    </div>
+  </div>
+</div>

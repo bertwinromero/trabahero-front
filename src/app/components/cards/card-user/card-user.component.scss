@@ -1,0 +1,22 @@
+.card-user {
+  .card-user-photo {
+    margin: 0 auto;
+  }
+
+  .card-user-photo img {
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+  }
+
+  .card-user-rate {
+    flex-grow: 2;
+    text-align: end;
+  }
+
+  .card-user-comment-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+}

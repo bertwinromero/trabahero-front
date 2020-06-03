@@ -1,0 +1,29 @@
+$header-height: 64px;
+
+.task-explore {
+  background-image: url('../../../../assets/images/tools.jpg');
+  height: calc(100vh - #{$header-height});
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+  .task-explore-wrapper {
+    width: 50%;
+    margin: 0 auto;
+
+    .explore-task-search {
+      position: relative;
+
+      .search-input {
+        padding-left: 38px;
+      }
+
+      .search-icon-input {
+        position: absolute;
+        width: 20px;
+        top: 9px;
+        left: 9px;
+      }
+    }
+  }
+}

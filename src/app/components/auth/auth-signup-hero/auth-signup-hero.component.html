@@ -1,0 +1,228 @@
+<div class="auth-signup-hero-container mt-4">
+  <form
+    novalidate
+    [formGroup]="userCreateForm"
+    (ngSubmit)="userCreateForm.valid ? onSubmit() : wasValidated = true;">
+    <h6>Personal Information</h6>
+    <div class="row">
+      <div class="col-sm">
+        <div
+          class="form-group">
+          <label for="firstname">First name</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.firstName)}"
+            formControlName="firstName"
+            name="firstName"
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Juan">
+          <div class="invalid-feedback">
+            Please provide a valid <strong>FIRST NAME</strong>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="lastname">Last name</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.lastName)}"
+            formControlName="lastName"
+            name="lastName" 
+            type="text"
+            class="form-control"
+            id="lastname"
+            placeholder="Santos">
+            <div class="invalid-feedback">
+              Please provide a valid <strong>LAST NAME</strong>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="middlename">Middle name</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.middleName)}"
+            formControlName="middleName"
+            name="middleName"
+            type="text"
+            class="form-control"
+            id="middlename"
+            placeholder="Garcia">
+            <div class="invalid-feedback">
+              Please provide a valid <strong>MIDDLE NAME</strong>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="form-check">
+            <input
+              formControlName="gender"
+              name="gender"
+              class="form-check-input"
+              type="radio"
+              id="male"
+              value="'male'">
+            <label class="form-check-label" for="male">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              formControlName="gender"
+              name="gender"
+              class="form-check-input"
+              type="radio"
+              id="female"
+              value="'female'">
+            <label class="form-check-label" for="female">
+              Female
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="contact">Contact number</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.phoneNumber)}"
+            formControlName="phoneNumber"
+            name="phoneNumber"
+            type="text"
+            class="form-control"
+            id="contact"
+            placeholder="+63926595****">
+            <div class="invalid-feedback">
+              Please provide a valid <strong>PHONE NUMBER</strong>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.address)}"
+            formControlName="address"
+            name="address"
+            type="text"
+            class="form-control"
+            id="address"
+            placeholder="House. Juan Dela Cruz. #34 Avocado St., Brgy. Maligaya. 2106">
+          <div class="invalid-feedback">
+            Please provide a valid <strong>ADDRESS</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="province">Province</label>
+          <select 
+            formControlName="province"
+            name="province"
+            class="form-control">
+            <option
+              *ngFor="let province of provinces;"
+              [value]="province"> {{province}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="city">City</label>
+          <select 
+            formControlName="city"
+            name="city"
+            class="form-control">
+            <option
+              *ngFor="let city of cities;"
+              [value]="city"> {{city}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.email)}"
+            formControlName="email"
+            name="email" 
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <div class="invalid-feedback">
+            Please provide a valid <strong>EMAIL ADDRESS</strong>
+          </div>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            [ngClass]="{'is-invalid': isControlValid(userCreateForm.controls.password)}"
+            formControlName="password"
+            name="password" 
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password">
+            <div class="invalid-feedback">
+              Please provide a valid <strong>PASSWORD</strong>
+            </div>
+        </div>
+      </div>
+    </div>
+        
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="uploadPhoto">Upload your latest photo</label>
+          <input 
+            formControlName="photoUrl"
+            (change)="onFileChanged($event)"
+            accept=".png, .jpg, .jpeg"
+            type="file"
+            class="btn form-control-file"
+            id="photoUrlFile">
+          <div class="image-preview-container w-100 mt-3">
+            <img 
+              *ngIf="photoUrl64 else defaultPhotUrl"
+              [src]="photoUrl64"
+              alt=""
+              class="w-100">
+            <ng-template #defaultPhotUrl>
+              <img 
+                src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                alt=""
+                class="w-100">
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-container w-100 text-center mt-4">
+      <button 
+        [disabled]="!userCreateForm.valid"
+        type="submit"
+        class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

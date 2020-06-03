@@ -1,0 +1,42 @@
+<div class="task-details-container mb-4">
+  <div id="taskSummaryAccordion">
+    <div class="card">
+      <app-ui-card-header 
+        [title]="'Tell us the details of your task'"
+        [id]="'taskSummary'"
+        [target]="'taskSummaryCollapse'">
+      </app-ui-card-header>
+  
+      <div id="taskSummaryCollapse" class="collapse show" aria-labelledby="taskSummary" data-parent="#taskSummaryAccordion">
+        <div class="card-body">
+          <div class="class-task-sub-title mb-3">
+            Start the conversation and tell your Tasker what you need done. This helps us show you only qualified and available Taskers for the job. Don't worry, you can edit this later.
+          </div>
+          <div class="task-details-content mb-3">
+            <form>
+              <div class="form-group">
+                <textarea 
+                  class="form-control"
+                  id="taskSummaryTextArea"
+                  rows="3"
+                  placeholder="Please provide a summary of you task"></textarea>
+      
+              </div>
+            </form>
+          </div>
+          <button 
+            [routerLink]="['/tasks/book/heroes']"
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#taskSummaryCollapse"
+            aria-expanded="true"
+            aria-controls="taskSummaryCollapse">
+
+            See Taskers & Prices
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

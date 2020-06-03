@@ -1,0 +1,9 @@
+@import './_common';
+
+.active {
+  font-weight: bold;
+}
+
+.nav-item a {
+  color: $gray-dark !important;
+}

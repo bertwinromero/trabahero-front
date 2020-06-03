@@ -1,0 +1,29 @@
+<div class="task-location-container mb-4">
+  <div id="taskLocationAcordion">
+    <div class="card">
+      <app-ui-card-header 
+        [title]="'Task Location'"
+        [id]="'taskLocation'"
+        [target]="'taskLocationCollapse'">
+      </app-ui-card-header>
+  
+      <div id="taskLocationCollapse" class="collapse show" aria-labelledby="taskLocation" data-parent="#taskLocationAcordion">
+        <div class="card-body">
+          <div class="task-location-address mb-3">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter a task location">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Landmark (Optional)">
+              </div>
+            </form>
+          </div>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#taskLocationCollapse" aria-expanded="true" aria-controls="taskLocationCollapse">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

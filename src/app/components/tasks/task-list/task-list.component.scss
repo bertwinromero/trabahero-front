@@ -1,0 +1,12 @@
+.task-list-wrapper {
+  text-align: center;
+  
+  .task-list-ul {
+    padding-left: 0;
+    text-align: left;
+
+    .task-action {
+      display: inline-block;
+    }
+  }
+}

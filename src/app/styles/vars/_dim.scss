@@ -1,0 +1,15 @@
+$dim-xxs: 5px !default;
+$dim-xs: 10px !default;
+$dim-sm: 15px !default;
+$dim-md: 20px !default;
+$dim-lg: 30px !default;
+$dim-xlg: 60px !default;
+
+$dim: (
+  xxs: $dim-xxs,
+  xs: $dim-xs,
+  sm: $dim-sm,
+  md: $dim-md,
+  lg: $dim-lg,
+  xlg: $dim-xlg,
+);

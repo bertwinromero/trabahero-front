@@ -1,0 +1,41 @@
+<div class="task-options-container mb-4">
+  <div id="taskOptionsAccordion">
+    <div class="card">
+      <app-ui-card-header 
+        [title]="'Task Options'"
+        [id]="'taskOptions'"
+        [target]="'taskOptionsCollapse'">
+      </app-ui-card-header>
+  
+      <div id="taskOptionsCollapse" class="collapse show" aria-labelledby="taskOptions" data-parent="#taskOptionsAccordion">
+        <div class="card-body">
+          <div class="class-task-sub-title mb-2">
+            How big is your task?
+          </div>
+          <div class="task-options-list mb-3">
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <label class="custom-control-label" for="defaultUnchecked">
+                Small - Est. 1hr
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <label class="custom-control-label" for="defaultUnchecked">
+                Medium - Est. 2-3hrs
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <label class="custom-control-label" for="defaultUnchecked">
+                Large - Est. 4hrs+
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#taskOptionsCollapse" aria-expanded="true" aria-controls="taskOptionsCollapse">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

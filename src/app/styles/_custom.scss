@@ -1,0 +1,9 @@
+@import './vars/_colors.scss';
+
+$theme-colors: (
+  "primary": $brand-primary,
+) !default;
+
+// Required
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
